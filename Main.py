@@ -10,7 +10,7 @@ def get_recent_form4_filings():
     url = "https://www.sec.gov/cgi-bin/browse-edgar?action=getcurrent&CIK=&type=4&company=&dateb=&owner=include&start=0&count=100&output=atom"
     
     headers = {
-        "User-Agent": "Ezra Schwartz ezra.n.schwartz@gmail.com"
+        "User-Agent": "username, email"
     }
 
     response = requests.get(url, headers=headers)
@@ -62,10 +62,10 @@ def send_email(filings_df):
     df_string = filings_df.to_string()
 
     return requests.post(
-        "https://api.mailgun.net/v3/sandbox55e96ef46e2a4db4bc76f56c750f6215.mailgun.org/messages",
-        auth=("api", "c34419cfef8bf7082bf96d4ce9d4b2a6-784975b6-b954c6e4"), 
+        "MAILGUNSANDBOX@GMAIL.COM",
+        auth=("api", "MAILGUNAPI"), 
         data={
-            "from": "Insider Filings <mailgun@sandbox55e96ef46e2a4db4bc76f56c750f6215.mailgun.org>", 
+            "from": "Insider Filings <MAILGUNSANDBOX@GMAIL.COM>", 
             "to": ["exoticjoe841@gmail.com"], 
             "subject": "NEW INSIDER BUYS!!!!!$$$",
             "text": f'INSIDER BUYS\n\n{df_string}'
