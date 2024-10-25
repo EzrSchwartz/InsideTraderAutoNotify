@@ -36,6 +36,7 @@ driver.implicitly_wait(2)
 
 # Find the elements with the class 'boxprice'
 prices = driver.find_elements(By.CSS_SELECTOR, '.background:#f1fff1')
+print("Prices")
 print(prices)
 
 # names = driver.find_elements(By.CSS_SELECTOR, '.title')
